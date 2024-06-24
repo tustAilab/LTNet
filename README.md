@@ -1,2 +1,2 @@
-# GeoCo
-The code of the paper "GeoCo" will be open source
+# LTNet
+The code of the paper "LTNet" will be open source
