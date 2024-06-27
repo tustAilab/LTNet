@@ -1,2 +1,2 @@
 # LTNet
-The code of the paper "LTNet" will be open source
+The code will be open-sourced after our paper is accepted.
