@@ -192,10 +192,10 @@ Generate LTNet disparity images of ETH3D test set (for generalization experiment
 
 ## Example kfold=1
 ```
-1.nohup python -u train_LTNet.py --dataset usvinland --maxdisp 64 --trainlist ./filenames/usvinland_train.txt --testlist ./filenames/usvinland_val.txt --loadckpt ./checkpoints/sceneflow/second/best.ckpt --epoch 300 --batch_size 8 --test_batch_size 8 --num_workers 8 --logdir ./checkpoints/usvinland/kfold-distill/kfold_1/logs-first --saveckpt ./checkpoints/usvinland/kfold-distill/kfold_1 --kfold 1 --distill > ./checkpoints/usvinland/kfold-distill/kfold_1/logs-first/nohup.log 2>&1 &
-2.Modify the best.ckpt file name to best-first.ckpt
-3.nohup python -u train_LTNet.py --dataset usvinland --maxdisp 64 --trainlist ./filenames/usvinland_train.txt --testlist ./filenames/usvinland_val.txt --loadckpt ./checkpoints/usvinland/kfold-distill/kfold_1/best-first.ckpt --epoch 50 --lrepochs 0:10 --batch_size 8 --test_batch_size 8 --num_workers 8 --logdir ./checkpoints/usvinland/kfold-distill/kfold_1/logs --saveckpt ./checkpoints/usvinland/kfold-distill/kfold_1 --kfold 1 > ./checkpoints/usvinland/kfold-distill/kfold_1/logs/nohup.log 2>&1 &
-4.python -u save_disp.py --dataset usvinland --maxdisp 64 --testlist ./filenames/usvinland_val.txt --loadckpt ./checkpoints/usvinland/kfold-distill/kfold_1/best.ckpt --kfold 1
+nohup python -u train_LTNet.py --dataset usvinland --maxdisp 64 --trainlist ./filenames/usvinland_train.txt --testlist ./filenames/usvinland_val.txt --loadckpt ./checkpoints/sceneflow/second/best.ckpt --epoch 300 --batch_size 8 --test_batch_size 8 --num_workers 8 --logdir ./checkpoints/usvinland/kfold-distill/kfold_1/logs-first --saveckpt ./checkpoints/usvinland/kfold-distill/kfold_1 --kfold 1 --distill > ./checkpoints/usvinland/kfold-distill/kfold_1/logs-first/nohup.log 2>&1 &
+# Modify the best.ckpt file name to best-first.ckpt
+nohup python -u train_LTNet.py --dataset usvinland --maxdisp 64 --trainlist ./filenames/usvinland_train.txt --testlist ./filenames/usvinland_val.txt --loadckpt ./checkpoints/usvinland/kfold-distill/kfold_1/best-first.ckpt --epoch 50 --lrepochs 0:10 --batch_size 8 --test_batch_size 8 --num_workers 8 --logdir ./checkpoints/usvinland/kfold-distill/kfold_1/logs --saveckpt ./checkpoints/usvinland/kfold-distill/kfold_1 --kfold 1 > ./checkpoints/usvinland/kfold-distill/kfold_1/logs/nohup.log 2>&1 &
+python -u save_disp.py --dataset usvinland --maxdisp 64 --testlist ./filenames/usvinland_val.txt --loadckpt ./checkpoints/usvinland/kfold-distill/kfold_1/best.ckpt --kfold 1
 ```
 
 # Acknowledgements
