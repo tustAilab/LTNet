@@ -1,0 +1,4 @@
+two_view_training/delivery_area_2l/im0.png two_view_training/delivery_area_2l/im1.png two_view_training_gt/delivery_area_2l/disp0GT.pfm
+two_view_training/playground_2s/im0.png two_view_training/playground_2s/im1.png two_view_training_gt/playground_2s/disp0GT.pfm
+two_view_training/playground_1s/im0.png two_view_training/playground_1s/im1.png two_view_training_gt/playground_1s/disp0GT.pfm
+two_view_training/terrace_2s/im0.png two_view_training/terrace_2s/im1.png two_view_training_gt/terrace_2s/disp0GT.pfm

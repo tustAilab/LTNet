@@ -1,0 +1,2 @@
+MiddEval3-data-H/MiddEval3/trainingH/Motorcycle/im0.png MiddEval3-data-H/MiddEval3/trainingH/Motorcycle/im1.png MiddEval3-GT0-H/MiddEval3/trainingH/Motorcycle/disp0GT.pfm
+MiddEval3-data-H/MiddEval3/trainingH/MotorcycleE/im0.png MiddEval3-data-H/MiddEval3/trainingH/MotorcycleE/im1.png MiddEval3-GT0-H/MiddEval3/trainingH/MotorcycleE/disp0GT.pfm
