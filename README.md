@@ -176,7 +176,8 @@ Generate LTNet disparity images of Middlebury test set (for generalization exper
 python -u save_disp.py --dataset middlebury --maxdisp 320 --testlist ./filenames/middlebury_all.txt --loadckpt ./checkpoints/sceneflow/second/best.ckpt
 ```
 Generate LTNet disparity images of ETH3D test set (for generalization experiment),
-```python -u save_disp.py --dataset eth3d --maxdisp 64 --testlist ./filenames/eth3d_all.txt --loadckpt ./checkpoints/sceneflow/second/best.ckpt
+```
+python -u save_disp.py --dataset eth3d --maxdisp 64 --testlist ./filenames/eth3d_all.txt --loadckpt ./checkpoints/sceneflow/second/best.ckpt
 ```
 
 # Distillation for USVInland
