@@ -1,3 +1,46 @@
+<p align="center">
+    <h1 align="center">A Lightweight Target-Driven Network of Stereo Matching for Inland Waterways</h1>
+    <p align="center">
+        Jing Su, Yiqing Zhou, Yu Zhang, Chao Wang, Yi Wei
+    </p>
+    <h3 align="center"><a href="https://arxiv.org/pdf/2410.07915.pdf">Paper</a>
+    <div align="center"></div>
+</p>
+
+<p align="center">
+    <a href="">
+    <!-- <img src="https://github.com/Open-YiQingZhou/LTNet/blob/main/images/LT-network.jpg" alt="Logo" width="90%"> -->
+    <img src="./images/LT-network.jpg" alt="Logo" width="90%">
+    </a>
+</p>
+
+# How to use
+
+## Environment
+* NVIDIA RTX 4090
+* Python 3.9
+* Pytorch 2.0.1
+
+## Install
+
+### Create a virtual environment and activate it.
+
+```
+conda create -n LTNet python=3.9
+conda activate LTNet
+```
+### Dependencies
+
+```
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+pip install opencv-python
+pip install scikit-image
+pip install tensorboard
+pip install matplotlib
+pip install tqdm
+pip install timm==0.5.4
+```
+
 # Dataset
 
 <details>
@@ -29,7 +72,7 @@
 ```
 </details>
 
-<details>
+<!-- <details>
 <summary>KITTI</summary>
 
 ```
@@ -51,7 +94,7 @@
         └───image_2/
         └───image_3/
 ```
-</details>
+</details> -->
 
 <details>
 <summary>Spring</summary>
@@ -77,7 +120,7 @@
 ```
 </details>
 
-<details>
+<!-- <details>
 <summary>Middlebury</summary>
 
 ```
@@ -116,7 +159,7 @@
     └───delivery_area_1s/
     └───......
 ```
-</details>
+</details> -->
 
 #  Training
 Train LTNet on Scene Flow. First training,
@@ -133,7 +176,7 @@ Finetune LTNet on USVInland (using pretrained model on Scene Flow),
 ```
 nohup python -u train_LTNet.py --dataset usvinland --maxdisp 64 --saveckpt ./checkpoints/usvinland/ --trainlist ./filenames/usvinland_train.txt --testlist ./filenames/usvinland_val.txt --batch_size 8 --test_batch_size 8 --num_workers 8 --kfold 1 > ./logs/nohup.log 2>&1 &
 ```
-Finetune LTNet on KITTI (using pretrained model on Scene Flow, mix 12 and 15),
+<!-- Finetune LTNet on KITTI (using pretrained model on Scene Flow, mix 12 and 15),
 ```
 nohup python -u train_LTNet.py --dataset kitti --maxdisp 192 --saveckpt ./checkpoints/kitti/ --trainlist ./filenames/kitti12_15_all.txt --testlist ./filenames/kitti15_val.txt --batch_size 4 --test_batch_size 4 --num_workers 8 --save_freq 10 > ./logs/nohup.log 2>&1 &
 ```
@@ -144,7 +187,7 @@ nohup python -u train_LTNet.py --dataset middlebury --maxdisp 320 --saveckpt ./c
 Finetune LTNet on ETH3D (using pretrained model on Scene Flow),
 ```
 nohup python -u train_LTNet.py --dataset eth3d --maxdisp 64 --saveckpt ./checkpoints/eth3d/ --trainlist ./filenames/eth3d_train.txt --testlist ./filenames/eth3d_val.txt --batch_size 1 --test_batch_size 1 --num_workers 8 > ./logs/nohup.log 2>&1 &
-```
+``` -->
 Finetune LTNet on Spring (using pretrained model on Scene Flow). First training,
 ```
 nohup python -u train_LTNet.py --dataset spring --maxdisp 512 --saveckpt ./checkpoints/spring/first/ --trainlist ./filenames/spring_train.txt --testlist ./filenames/spring_val.txt --epochs 32 --lrepochs 10,14,18,22,26:2 --batch_size 8 --test_batch_size 1 --num_workers 8 > ./logs/nohup.log 2>&1 &
@@ -163,22 +206,22 @@ Generate LTNet disparity images of USVInland test set,
 ```
 python -u save_disp.py --dataset usvinland --maxdisp 64 --testlist ./filenames/usvinland_val.txt --loadckpt ./checkpoints/usvinland/kfold-distill/kfold_1/best.ckpt --kfold 1
 ```
-Generate LTNet disparity images of KITTI test set,
+<!-- Generate LTNet disparity images of KITTI test set,
 ```
 python -u save_disp.py --dataset kitti --maxdisp 192 --testlist ./filenames/kitti15_test.txt --loadckpt ./checkpoints/kitti/best.ckpt
-```
+``` -->
 Generate LTNet disparity images of Spring test set,
 ```
 python -u save_disp.py --dataset spring --maxdisp 512 --testlist ./filenames/spring_test.txt --loadckpt ./checkpoints/spring/second/best.ckpt --submit
 ```
-Generate LTNet disparity images of Middlebury test set (for generalization experiment),
+<!-- Generate LTNet disparity images of Middlebury test set (for generalization experiment),
 ```
 python -u save_disp.py --dataset middlebury --maxdisp 320 --testlist ./filenames/middlebury_all.txt --loadckpt ./checkpoints/sceneflow/second/best.ckpt
 ```
 Generate LTNet disparity images of ETH3D test set (for generalization experiment),
 ```
 python -u save_disp.py --dataset eth3d --maxdisp 64 --testlist ./filenames/eth3d_all.txt --loadckpt ./checkpoints/sceneflow/second/best.ckpt
-```
+``` -->
 
 # Distillation for USVInland
 
@@ -200,4 +243,5 @@ python -u save_disp.py --dataset usvinland --maxdisp 64 --testlist ./filenames/u
 ```
 
 # Acknowledgements
-Thanks to Gangwei Xu for opening source of his excellent work [CGI-Stereo](https://github.com/gangweiX/CGI-Stereo).
+
+The project structure and portions of the code originate from [CGI-Stereo](https://github.com/gangweiX/CGI-Stereo) and [AANet](https://github.com/haofeixu/aanet). We extend our appreciation to the original authors for their remarkable work.
