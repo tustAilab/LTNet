@@ -1,5 +1,5 @@
 <p align="center">
-    <h1 align="center">A Lightweight Target-Driven Network of Stereo Matching for Inland Waterways</h1>
+    <h1 align="center">A Lightweight Target-Regularization Network of Stereo Matching for Inland Waterways</h1>
     <p align="center">
         Jing Su*, Yiqing Zhou*, Yu Zhang<sup>+</sup>, Chao Wang, Yi Wei
     </p>
